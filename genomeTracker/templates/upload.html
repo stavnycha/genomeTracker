@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}Welcome{% endblock %}
+
+{% block content %}
+  <h1>Upload your genome!</h1>
+  <div class="left">
+	  <form method="POST" enctype="multipart/form-data" action="/report">
+		  <input type="file" name="file" accept="text/plain"><br>
+		  <input type="submit" value="Submit" />
+	</form>
+	{% if error %}
+		<strong>{{ error }}</strong>
+	{% endif %}
+	</div>
+
+  
+{% endblock %}

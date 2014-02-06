@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block title %}Bad Request{% endblock %}
+
+
+{% block content %}
+  <h1>Bad Request</h1>
+  <p>You are doing something is the wrong way.</p>
+  <p><a href="{{ url_for('index') }}">Home page</a></p>
+{% endblock %}

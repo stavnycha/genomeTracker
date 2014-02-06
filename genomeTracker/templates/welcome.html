@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+{% block title %}Welcome{% endblock %}
+{% block head %}
+  {{ super() }}
+  <script>
+		/*$('#loginLink').click(function(e) {
+			$('#login').lightbox_me({
+				centered: true, 
+				onLoad: function() { 
+					$('#login').find('input:first').focus()
+					}
+				});
+			e.preventDefault();
+		});
+		
+		$('#signupLink').click(function(e) {
+			$('#signup').lightbox_me({
+				centered: true, 
+				onLoad: function() { 
+					$('#signup').find('input:first').focus()
+					}
+				});
+			e.preventDefault();
+		});
+		
+		$('.cancel').click(function(){
+			this.trigger('close');
+		})*/
+  </script>
+{% endblock %}
+
+{% block content %}
+  <h1>Welcome to Genome Tracker!</h1>
+  <div class="left">
+	  <p>....some info about tracker</p>
+	  <p>1) You can get your genome in these ways:</p>
+	  <ul>
+		<li>...
+		<li>...
+		<li>...
+		<li>...
+	  </ul>
+	  <p>2) Register or sign up in our system using buttons on the right</p>
+	  <p>3) Upload the file with your genome</p>
+	  <p>4) Receive the description of your health and risks</p>
+	</div>
+	
+	{% if not isLoggedIn %}
+		<div class="right">
+			<form action="/login">
+				<input type="submit" value="Login" />
+			</form><br>
+			<form action="/signup">
+				<input type="submit" value="Signup" />
+			</form>
+		</div>
+	{% endif %}
+
+	
+	
+{% endblock %}

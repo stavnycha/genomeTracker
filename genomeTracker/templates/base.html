@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+  <head>
+    {% block head %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+	<script src="{{ url_for('static', filename='jquery-1.11.0.min.js') }}"></script>
+	<script src="{{ url_for('static', filename='jquery.lightbox_me.js') }}"></script>
+	{% endblock %}
+    <title>{% block title %}{% endblock %} - Genome Tracker</title>
+  </head>
+  <body>
+	<div id="header">{% block header %}
+	{% if username %}
+		<p>Hi, {{username}} </p>
+		<a href="/logout">Log out </a>
+	{% endif %}
+	<div id="menu">
+	<ul>
+	<li><a href="/"> Main page </a>
+	<li><a href="/upload"> Upload page </a>
+	<li><a href="/catalogue"> SPN Catalogue page </a>
+	</ul>
+	</div>
+	{% endblock %}</div>
+    <div id="content">{% block content %}{% endblock %}</div>
+    <div id="footer">
+      {% block footer %}
+      &copy; Copyright 2014 by <a href="http://genometracker.com">GenomeTracker</a>.
+      {% endblock %}
+    </div>
+  </body>
+</html>
