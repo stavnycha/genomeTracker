@@ -91,6 +91,13 @@ def permission_denied(e):
 @app.errorhandler(400)
 def bad_request(e):
     return render_template('400.html'), 400
+
+import subprocess
+
+@app.route ( "/repo_push" )
+def repo_push ():
+    subprocess.call ( ["bash", "/home/www/pull_repo.sh"] )
+    return redirect(url_for('index'))
 	
 if __name__ == '__main__':
-	app.run()
+    app.run()
